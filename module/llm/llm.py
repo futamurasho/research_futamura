@@ -76,7 +76,7 @@ def apply_updates_to_json(base_json: dict, updates: list) -> dict:
 # 解析する画像のファイルパスを指定します。
 # スクリプトのあるディレクトリを基準にする場合
 base_dir = os.path.dirname(os.path.abspath(__file__))
-pdf_path = os.path.join(base_dir, "../data/report/SF/000010/000010_0012.pdf")
+pdf_path = os.path.join(base_dir, "../../data/report/SF/000010/000010_0012.pdf")
 images = convert_from_path(pdf_path, dpi=300)
 
 # 画像ファイルをBase64形式にエンコードする関数
@@ -129,6 +129,9 @@ for batch_index in range(ceil(len(images) / batch_size)):
     # 差分を適用
     # result_json = apply_update_command(result_json, llm_output)
 
+    # 差分ログを格納するディレクトリを作成
+    log_dir = os.path.join(base_dir, "diff_logs")
+    os.makedirs(log_dir, exist_ok=True)
     # 差分ログ保存（任意）
     with open(f"diff_batch_{batch_index + 1}.txt", "w", encoding="utf-8") as f:
         f.write(llm_output)

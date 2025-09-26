@@ -14,7 +14,9 @@ from docling.datamodel.pipeline_options import (
 from docling.document_converter import DocumentConverter, PdfFormatOption
 
 base_dir = os.path.dirname(__file__)  # test.py の場所を基準にする
-pdf_path = os.path.join(base_dir, "../data/report/SF/000010/000010_0012.pdf")
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+pdf_path = os.path.join(project_root, "data", "report", "SF", "000010", "000010_0012.pdf")
+
 output_dir = os.path.join(base_dir, "docling_result")
 os.makedirs(output_dir, exist_ok=True)
 
