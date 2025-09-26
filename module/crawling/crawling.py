@@ -1,13 +1,13 @@
+import os
+import re
+from urllib.parse import urljoin, urlparse
+
 import requests
 from bs4 import BeautifulSoup
-import os
-from urllib.parse import urljoin,urlparse
-import re
-
 
 # 保存先フォルダ
 BASE_DIR = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'data', 'report')
+    os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'report')
 )
 os.makedirs(BASE_DIR, exist_ok=True)
 
