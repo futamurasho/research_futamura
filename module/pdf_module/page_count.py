@@ -1,17 +1,10 @@
 import os
+
 from pypdf import PdfReader
 
-# # PDF が置いてあるフォルダ
-# PDF_DIR = "../data/report/SF/000010"
 
-# for fname in os.listdir(PDF_DIR):
-#     if not fname.lower().endswith(".pdf"):
-#         continue
-#     path = os.path.join(PDF_DIR, fname)
-#     reader = PdfReader(path)
-#     print(f"{fname}: {len(reader.pages)} pages")
-
-
+#pdfの枚数をカウントするスクリプト
+# 例：python3 page_count.py ../../data/report/SCでSC以下のpdfの枚数をカウントできる
 def count_pdf_pages(base_dir):
     """
     base_dir 以下の PDF をすべて走査し、
